@@ -1,0 +1,50 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html *,
+html *::before,
+html *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  font-family: var(--ff1);
+  line-height: 1.7;
+  background-color: var(--col2);
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  color: var(--col-wh);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input,
+textarea,
+a,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:focus {
+  outline-style: none;
+  outline-width: 0px !important;
+  outline-color: none !important;
+}

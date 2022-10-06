@@ -1,0 +1,56 @@
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: max-content;
+  span {
+    position: relative;
+    font-family: inherit;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 40px;
+    height: 64px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    color: #ffffff;
+    cursor: pointer;
+    max-width: max-content;
+    transform: translateY(-3px);
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    background: linear-gradient(0deg, #ff0000 30.88%, #c00505 92.19%);
+    border-radius: 20px;
+    z-index: 2;
+
+    @media (max-width: 1024px) {
+      padding: 10px 25px;
+      height: 50px;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: calc(100% + 16px);
+    height: calc(100% + 12px);
+    background-color: #ff0000;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .btn {
+    padding: 23px 40px;
+    min-height: 63px;
+  }
+}

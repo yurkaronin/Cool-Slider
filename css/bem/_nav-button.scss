@@ -1,0 +1,63 @@
+.nav-button {
+  button {
+    box-shadow: none;
+    transform: none;
+    border: none;
+    height: var(--elem-sz);
+    width: var(--elem-sz);
+    background-color: var(--col4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    span {
+      width: 20px;
+      height: 2px;
+      background-color: var(--col-wh);
+      display: block;
+      border-radius: 0 0 3px 3px;
+      pointer-events: none;
+      transition: all 0.2s;
+
+      &::before,
+      &::after {
+        content: "";
+        width: inherit;
+        height: inherit;
+        background-color: var(--col-wh);
+        display: inherit;
+        position: absolute;
+        border-radius: inherit;
+        pointer-events: initial;
+        transition: initial;
+      }
+
+      &:before {
+        margin-top: -6px;
+      }
+
+      &::after {
+        margin-top: 6px;
+      }
+    }
+
+    &.open {
+      span {
+        background-color: transparent;
+        border-radius: 0;
+
+        &:before {
+          margin-top: 0;
+          transform: rotate(45deg);
+        }
+        &:after {
+          margin-top: 0;
+          transform: rotate(-45deg);
+        }
+      }
+
+
+    }
+  }
+}
