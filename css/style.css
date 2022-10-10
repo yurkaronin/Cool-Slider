@@ -430,6 +430,10 @@ input[type=radio].visually-hidden {
     right: 22px;
   }
 }
+.body {
+  min-height: 100vh;
+}
+
 .wrapper {
   max-width: 1408px;
   padding: 0 48px;
@@ -509,42 +513,55 @@ input[type=radio].visually-hidden {
     min-height: 63px;
   }
 }
-.slider-button {
+.nav-button {
+  box-shadow: none;
+  transform: none;
   border: none;
-  background-color: #ffffff;
+  height: var(--elem-sz);
+  width: var(--elem-sz);
+  background-color: var(--col4);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 176px;
-  height: 176px;
-  transition: all 0.3s;
-  border-radius: 50%;
   cursor: pointer;
 }
-@media (max-width: 1024px) {
-  .slider-button {
-    width: 88px;
-    height: 88px;
-  }
-}
-.slider-button svg {
+.nav-button span {
+  width: 20px;
+  height: 2px;
+  background-color: var(--col-wh);
+  display: block;
+  border-radius: 0 0 3px 3px;
   pointer-events: none;
-  width: 42px;
-  height: 26px;
+  transition: all 0.2s;
 }
-@media (max-width: 1024px) {
-  .slider-button svg {
-    width: 21px;
-  }
+.nav-button span::before, .nav-button span::after {
+  content: "";
+  width: inherit;
+  height: inherit;
+  background-color: var(--col-wh);
+  display: inherit;
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: initial;
+  transition: initial;
 }
-.slider-button svg path {
-  transition: all 0.3s;
+.nav-button span:before {
+  margin-top: -6px;
 }
-.slider-button:hover {
-  background-color: #c9c6c6;
+.nav-button span::after {
+  margin-top: 6px;
 }
-.slider-button:hover svg path {
-  stroke: #ffffff;
+.nav-button.open span {
+  background-color: transparent;
+  border-radius: 0;
+}
+.nav-button.open span:before {
+  margin-top: 0;
+  transform: rotate(45deg);
+}
+.nav-button.open span:after {
+  margin-top: 0;
+  transform: rotate(-45deg);
 }
 
 .title {
@@ -598,57 +615,61 @@ input[type=radio].visually-hidden {
   }
 }
 
-.nav-button button {
-  box-shadow: none;
-  transform: none;
-  border: none;
-  height: var(--elem-sz);
-  width: var(--elem-sz);
-  background-color: var(--col4);
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.nav-button button span {
-  width: 20px;
-  height: 2px;
-  background-color: var(--col-wh);
-  display: block;
-  border-radius: 0 0 3px 3px;
-  pointer-events: none;
-  transition: all 0.2s;
-}
-.nav-button button span::before, .nav-button button span::after {
-  content: "";
-  width: inherit;
-  height: inherit;
-  background-color: var(--col-wh);
-  display: inherit;
-  position: absolute;
-  border-radius: inherit;
-  pointer-events: initial;
-  transition: initial;
-}
-.nav-button button span:before {
-  margin-top: -6px;
-}
-.nav-button button span::after {
-  margin-top: 6px;
-}
-.nav-button button.open span {
+  min-height: var(--elem-sz);
+  padding: 0 18px;
   background-color: transparent;
-  border-radius: 0;
+  max-width: max-content;
+  transition: all 0.3s;
 }
-.nav-button button.open span:before {
-  margin-top: 0;
-  transform: rotate(45deg);
+.header__logo a:hover, .header__logo a:active, .header__logo a:focus {
+  background-color: var(--col4);
 }
-.nav-button button.open span:after {
-  margin-top: 0;
-  transform: rotate(-45deg);
+.header__logo svg {
+  width: 34px;
+  height: 33px;
+  margin-right: 33px;
 }
-
-.body {
-  min-height: 100vh;
+.header__logo span {
+  font-family: var(--ff1);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--col-wh);
+  margin: 0;
+  padding: 0;
+}
+.header__contacts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header__contacts li {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(var(--col-wh), 0.5);
+}
+.header__contacts a {
+  color: var(--col1);
+  font-family: var(--ff3);
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
 }

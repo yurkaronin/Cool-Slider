@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    a {
+      display: flex;
+      align-items: center;
+      min-height: var(--elem-sz);
+      padding: 0 18px;
+      background-color: transparent;
+      max-width: max-content;
+      transition: all 0.3s;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: var(--col4);
+      }
+    }
+    svg {
+      width: 34px;
+      height: 33px;
+      margin-right: 33px;
+    }
+    span {
+      font-family: var(--ff1);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 15px;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--col-wh);
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__contacts {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+
+      color: rgba(var(--col-wh), 0.5);
+    }
+
+    a {
+      color: var(--col1);
+      font-family: var(--ff3);
+      font-style: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      text-transform: inherit;
+    }
+  }
+}

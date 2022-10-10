@@ -1,31 +1,5 @@
 @charset "utf-8";
 
-:root {
-  --ff1: "Raleway", sans-serif;
-  --ff2: "Oswald", sans-serif;
-  --ff3: "Roboto", sans-serif;
-
-
-  --col1: #F57500;
-  --col2: #252525;
-  --col3: #303030;
-  --col4: #3C3C3C;
-
-  --col-wh: #ffffff;
-
-  --fsz: 16px;
-
-  --elem-sz: 70px;
-
-  --bdr-op: 0.1;
-}
-
-
-@import "parts/fonts";
-@import "parts/global";
-@import "parts/support";
-@import "bem/bem";
-
-@import "parts/body";
-
-@import "sections/header";
+@import "site/site";
+@import "components/components";
+@import "sections/sections";
