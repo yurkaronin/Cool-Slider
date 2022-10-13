@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.3s;
 
     span {
       width: 20px;
@@ -57,5 +58,10 @@
       }
 
 
+    }
+
+    &:hover,
+    &.open {
+      background-color: var(--col1);
     }
 }
