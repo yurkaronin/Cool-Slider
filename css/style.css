@@ -459,61 +459,20 @@ input[type=radio].visually-hidden {
 }
 
 .button {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: max-content;
-}
-.button span {
-  position: relative;
+  text-decoration: none;
   font-family: inherit;
-  font-style: normal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 32px 40px;
-  height: 64px;
-  text-transform: uppercase;
-  transition: all 0.3s;
-  color: #ffffff;
+  background-color: var(--col1);
+  border-color: var(--col1);
+  border: 1px;
   cursor: pointer;
-  max-width: max-content;
-  transform: translateY(-3px);
-  border: none;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1;
-  background: linear-gradient(0deg, #ff0000 30.88%, #c00505 92.19%);
-  border-radius: 20px;
-  z-index: 2;
 }
-@media (max-width: 1024px) {
-  .button span {
-    padding: 10px 25px;
-    height: 50px;
-  }
-}
-.button::before {
-  content: "";
-  display: block;
-  width: calc(100% + 16px);
-  height: calc(100% + 12px);
-  background-color: #ff0000;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 24px;
-  position: absolute;
-  z-index: -1;
-  top: -10px;
+.button svg {
+  pointer-events: none;
 }
 
-@media (max-width: 650px) {
-  .btn {
-    padding: 23px 40px;
-    min-height: 63px;
-  }
-}
 .nav-button {
   box-shadow: none;
   transform: none;
@@ -620,11 +579,17 @@ input[type=radio].visually-hidden {
   }
 }
 
+.main__flex {
+  display: flex;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 5;
 }
 .header__logo a {
   display: flex;
@@ -721,6 +686,63 @@ input[type=radio].visually-hidden {
   text-transform: inherit;
 }
 
-.aside svg {
-  width: 15px;
+.aside {
+  height: calc(100vh - var(--elem-sz) - 1px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  max-width: max-content;
+  background-color: var(--col3);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+.aside__decorate {
+  margin-bottom: auto;
+  margin-top: 103px;
+  padding: 0 15px;
+}
+.aside__social {
+  padding: 0 15px;
+}
+.aside__social li {
+  margin-top: -1px;
+}
+.aside__social li:first-child {
+  margin-top: initial;
+}
+.aside__social a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-color: var(--col5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  background-color: transparent;
+}
+.aside__social a svg {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.aside__social a:hover, .aside__social a:active {
+  border-color: var(--col1);
+  background-color: var(--col1);
+}
+.aside__social a:hover svg, .aside__social a:active svg {
+  opacity: 1;
+}
+.aside__share {
+  margin-top: auto;
+}
+.aside__share .button {
+  height: var(--elem-sz);
+  width: var(--elem-sz);
+  background-color: var(--col1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
