@@ -1,0 +1,36 @@
+.social-list {
+  background-color: var(--col3);
+  li {
+    margin-top: -1px;
+
+    &:first-child {
+      margin-top: initial;
+    }
+  }
+  a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-color: var(--col5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    background-color: transparent;
+
+    svg {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    &:hover,
+    &:active {
+      border-color: var(--col1);
+      background-color: var(--col1);
+
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+}
