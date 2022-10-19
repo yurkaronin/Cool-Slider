@@ -1,7 +1,7 @@
 .slider {
   padding-left: var(--elem-sz);
   padding-top: var(--elem-sz);
-  background-color: #fff;
+  // background-color: #fff;
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -17,7 +17,7 @@
     align-items: center;
     max-width: 75%;
     width: 100%;
-    background-color: red;
+    // background-color: red;
     position: absolute;
     z-index: 3;
     bottom: 0;
@@ -43,7 +43,7 @@
     height: 100%;
     max-width: 75%;
     width: 100%;
-    background-color: #007aff;
+    // background-color: #007aff;
   }
   &__images-slide {
     height: 100%;

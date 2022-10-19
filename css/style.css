@@ -736,7 +736,6 @@ input[type=radio].visually-hidden {
 .slider {
   padding-left: var(--elem-sz);
   padding-top: var(--elem-sz);
-  background-color: #fff;
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -751,7 +750,6 @@ input[type=radio].visually-hidden {
   align-items: center;
   max-width: 75%;
   width: 100%;
-  background-color: red;
   position: absolute;
   z-index: 3;
   bottom: 0;
@@ -772,7 +770,6 @@ input[type=radio].visually-hidden {
   height: 100%;
   max-width: 75%;
   width: 100%;
-  background-color: #007aff;
 }
 .slider__images-slide {
   height: 100%;
