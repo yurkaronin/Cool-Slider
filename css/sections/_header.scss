@@ -48,6 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--ff3);
 
     ul {
       list-style: none;
@@ -65,8 +66,11 @@
       letter-spacing: 0.4em;
       text-transform: uppercase;
       padding: 9px 24px;
-      color: rgba(var(--col-wh), 0.5);
+      color: rgba(#ffffff, 0.5);
       position: relative;
+      span {
+        color: rgba(#ffffff, 1);
+      }
 
       &::after {
         content: "";

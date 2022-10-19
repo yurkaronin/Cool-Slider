@@ -1,22 +1,32 @@
 .social-list {
   background-color: var(--col3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  max-width: max-content;
+  border-right: 3px solid;
+  border-color: var(--col1);
   li {
-    margin-top: -1px;
+    margin-top: initial;
+
+    margin: initial;
+    margin-left: -1px;
 
     &:first-child {
-      margin-top: initial;
+      margin-left: initial;
     }
   }
   a {
-    width: 40px;
-    height: 40px;
-    border: 1px solid;
-    border-color: var(--col5);
+    width: var(--elem-sz);
+    height: var(--elem-sz);
+    border-right: 1px solid;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
     background-color: transparent;
+    border-color: var(--col5);
 
     svg {
       pointer-events: none;

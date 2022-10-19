@@ -14,10 +14,6 @@
   z-index: 5;
   padding-top: var(--elem-sz);
 
-  .social-list {
-    padding: 0 15px;
-  }
-
   &__decorate {
     margin-bottom: auto;
     margin-top: 103px;
@@ -33,6 +29,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+}
+
+.aside {
+  .social-list {
+    display: initial;
+    border: none;
+    li {
+      margin-top: -1px;
+      margin-left: initial;
+      &:first-child {
+        margin-top: initial;
+      }
+    }
+    a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid;
+      border-color: var(--col5);
+
+      &:hover,
+    &:active {
+      border-color: var(--col1);
+    }
     }
   }
 }
