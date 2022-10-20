@@ -26,10 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: false,
     speed: 2400,
     parallax: true,
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    grabCursor: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     mousewheel: {
       invert: false,
     },
