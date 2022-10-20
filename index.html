@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-rim-auto-match" content="none">
 
@@ -92,6 +92,7 @@
               </svg></a></li>
         </ul>
       </div>
+
       <div class="aside__share">
         <button class="button" type="button">
           <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,6 +113,46 @@
 
     <section class="slider">
       <div class="slider__wrapper">
+
+        <!-- слайдер с текстовой информацией  -->
+        <div class="slider__details">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide slider__details-slide">
+              <div class="slider__details-wrapper">
+                <h3 class="title">Подбор внедорожника
+                  <span>на&nbsp;любой</span> случай
+                </h3>
+                <p class="subtitle">Выберем и подберём для вас любой внедорожник в кратчайшие сроки, с учётом всех ваших
+                  пожеланий и всех необходимых потребностей.</p>
+                <a href="#" class="button"><span>Оставить заявку</span></a>
+              </div>
+            </div>
+
+            <div class="swiper-slide slider__details-slide">
+              <div class="slider__details-wrapper">
+                <h3 class="title">Индивидуальный подход
+                  <span>к&nbsp;каждому</span> покупателю
+                </h3>
+                <p class="subtitle">Все автомобили мы подбираем индивидуально для каждого клиента или покупателя и с
+                  трепетом относимся к реузльтату нашей работы.</p>
+                <a href="#" class="button"><span>Оставить заявку</span></a>
+              </div>
+            </div>
+
+            <div class="swiper-slide slider__details-slide">
+              <div class="slider__details-wrapper">
+                <h3 class="title">Выбор лучшей модели
+                  <span>из&nbsp;модельного</span> ряда
+                </h3>
+                <p class="subtitle">В нашем модельном ряду имеются модели сотен различных внедорожников, которые
+                  удовлетворят даже самого требовательного клиента.</p>
+                <a href="#" class="button"><span>Оставить заявку</span></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
         <!-- слайдер с картинками  -->
         <div class="slider__images">
@@ -140,9 +181,6 @@
           </div>
         </div>
 
-        <!-- слайдер с текстовой информацией  -->
-        <div class="slider__details"></div>
-
         <div class="slider__footer">
 
           <div class="slider__social">
@@ -166,18 +204,59 @@
           </div>
 
           <div class="slider__pagination">
-            <ul>
-              <li><a href=""></a></li>
-            </ul>
+            <div class="swiper-pagination"></div>
           </div>
 
           <div class="slider__scrollbar">
-
+            <div class="swiper-scrollbar"></div>
           </div>
 
           <div class="slider__navigation">
 
+              <button class="swiper-button swiper-button-prev" type="button">
+                <svg width="5" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#a)">
+                    <path
+                      d="m4.658.712.138.138a.234.234 0 0 1 0 .332L.978 5l3.818 3.818a.234.234 0 0 1 0 .332l-.138.138a.234.234 0 0 1-.332 0L.204 5.166a.234.234 0 0 1 0-.332L4.326.712a.234.234 0 0 1 .332 0Z"
+                      fill="#F57500" />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" transform="matrix(-1 0 0 1 5 0)" d="M0 0h5v10H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+
+              <button class="swiper-button swiper-button-next" type="button">
+                <svg width="5" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#a)">
+                    <path
+                      d="M.342.712.204.85a.234.234 0 0 0 0 .332L4.022 5 .204 8.818a.234.234 0 0 0 0 .332l.138.138c.092.091.24.091.332 0l4.122-4.122a.234.234 0 0 0 0-.332L.674.712a.234.234 0 0 0-.332 0Z"
+                      fill="#F57500" />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h5v10H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
           </div>
+        </div>
+
+        <!-- счётчик слайдов ВЕРХНИЙ-->
+        <div class="slider__item-counter">
+          <span class="slider__counter-now">01</span> / <span class="slider__counter-all"></span>
+        </div>
+
+        <!-- текущий номер слайда НИЖНИЙ-->
+        <div class="slider__item-nember">02</div>
+
+
+        <!-- декоративное колесо на фоне слайда  -->
+        <div class="slider__gear">
+
         </div>
       </div>
 
@@ -185,6 +264,9 @@
 
   </main>
   <script src="./libs/swiper-bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+
   <script src="./js/scripts.js"></script>
 </body>
 

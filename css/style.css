@@ -7,6 +7,7 @@
   --col3: #303030;
   --col4: #3C3C3C;
   --col5: #5A5A5A;
+  --col6: #8A8A8A;
   --col-wh: #ffffff;
   --fsz: 16px;
   --elem-sz: 70px;
@@ -414,14 +415,48 @@ input[type=radio].visually-hidden {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-family: inherit;
   background-color: var(--col1);
   border-color: var(--col1);
   border: 1px;
   cursor: pointer;
+  max-width: max-content;
+  height: 45px;
+  padding: 16px 25px;
+  font-family: var(--ff1);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--col-wh);
+  margin-left: auto;
+  box-shadow: none;
+  position: relative;
+}
+.button::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  background-color: var(--col2);
+  pointer-events: none;
+  transition: width 0.5s ease-out;
+  top: 0;
+  left: 0;
+}
+.button span {
+  position: relative;
+  color: var(--col-wh);
+  pointer-events: none;
 }
 .button svg {
   pointer-events: none;
+  position: relative;
+}
+.button:hover::before, .button:focus::before {
+  width: 100%;
 }
 
 .nav-button {
@@ -710,6 +745,9 @@ input[type=radio].visually-hidden {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
+  max-width: initial;
 }
 
 .aside .social-list {
@@ -759,17 +797,30 @@ input[type=radio].visually-hidden {
 }
 .slider__pagination {
   flex: 0 0 140px;
+  display: flex;
+  justify-content: center;
+  height: var(--elem-sz);
+  align-items: center;
 }
 .slider__scrollbar {
   flex: 1 0 0;
+  display: flex;
+  justify-content: center;
+  height: var(--elem-sz);
+  align-items: center;
 }
 .slider__navigation {
   flex: 0 0 140px;
+  display: flex;
+  justify-content: center;
+  height: var(--elem-sz);
+  align-items: center;
 }
 .slider__images {
   height: 100%;
   max-width: 75%;
   width: 100%;
+  overflow: hidden;
 }
 .slider__images-slide {
   height: 100%;
@@ -798,6 +849,114 @@ input[type=radio].visually-hidden {
   height: 100%;
   width: 100%;
 }
+.slider__details {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: calc(100% - var(--elem-sz));
+}
+.slider__details-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slider__details-wrapper {
+  max-width: 770px;
+  margin-right: 20%;
+  margin-left: auto;
+}
+.slider__details-wrapper .title {
+  font-weight: 700;
+  font-size: 60px;
+  text-align: right;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--col-wh);
+  margin: 0;
+  margin-bottom: 16px;
+  font-family: var(--ff2);
+}
+.slider__details-wrapper .title span {
+  color: var(--col1);
+}
+.slider__details-wrapper .subtitle {
+  font-family: var(--ff1);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: right;
+  color: var(--col-wh);
+  margin: 0;
+  margin-bottom: 16px;
+  max-width: 505px;
+  margin-left: auto;
+}
+.slider__gear {
+  width: 600px;
+  height: 600px;
+  background-image: url(../img/gear.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  top: 50%;
+  right: calc(25% - 300px);
+  z-index: 2;
+  margin-top: calc(-300px - var(--elem-sz));
+  position: absolute;
+}
+.slider__item-counter {
+  position: absolute;
+  top: 20px;
+  z-index: 5;
+  right: var(--elem-sz);
+  font-family: var(--ff2);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--col-wh);
+  width: 100%;
+  max-width: 150px;
+  height: 80px;
+  text-align: right;
+  padding-top: 40px;
+}
+.slider__counter-now {
+  font-size: 40px;
+  line-height: 1;
+  color: var(--col1);
+  display: inline-block;
+  min-width: 50px;
+}
+.slider__counter-all {
+  position: initial;
+  margin: 0;
+  width: initial;
+  height: initial;
+}
+.slider__item-nember {
+  font-family: var(--ff2);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 1;
+  color: var(--col2);
+  -webkit-text-stroke: 1px #7f7f7f;
+  position: absolute;
+  bottom: 10%;
+  right: var(--elem-sz);
+}
+.slider__item-nember::after {
+  color: var(--col1);
+  content: ".";
+  font-family: var(--ff2);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 1;
+  -webkit-text-stroke: 0;
+}
 
 .slider .social-list li a {
   border: none;
@@ -806,4 +965,81 @@ input[type=radio].visually-hidden {
 }
 .slider .social-list li:last-child a {
   border-right: none;
+}
+.slider .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  bottom: initial;
+  max-width: max-content;
+  position: initial;
+}
+.slider .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: var(--col-wh);
+  opacity: 1;
+  margin: 0 7.5px !important;
+  transition: all 0.3s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider .swiper-pagination-bullet-active {
+  background-color: var(--col1);
+}
+.slider .swiper-pagination-bullet-active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid;
+  border-color: var(--col1);
+  border-radius: 50%;
+  pointer-events: none;
+  width: 14px;
+  height: 14px;
+}
+.slider .swiper-scrollbar {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: initial;
+  bottom: initial;
+  display: flex;
+  align-items: center;
+}
+.slider .swiper-scrollbar-drag {
+  background-color: var(--col1);
+  border-radius: 10px;
+  height: 3px;
+  cursor: pointer;
+}
+.slider .swiper-button {
+  width: 32px;
+  height: 32px;
+  position: initial;
+  background-color: var(--col3);
+  padding: 0;
+  border: 2px solid;
+  border-color: var(--col1);
+  transition: all 0.3s;
+  margin: 0;
+}
+.slider .swiper-button svg {
+  pointer-events: none;
+}
+.slider .swiper-button svg path {
+  fill: var(--col1);
+}
+.slider .swiper-button::after {
+  display: none;
+}
+.slider .swiper-button-disabled {
+  opacity: 1 !important;
+  border-color: var(--col6);
+}
+.slider .swiper-button-disabled svg path {
+  fill: var(--col6);
+}
+.slider .swiper-button-prev {
+  margin-right: 5px;
 }
