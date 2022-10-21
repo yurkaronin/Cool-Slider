@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-rim-auto-match" content="none">
 
@@ -125,7 +125,7 @@
                 </h3>
                 <p class="subtitle">Выберем и подберём для вас любой внедорожник в кратчайшие сроки, с учётом всех ваших
                   пожеланий и всех необходимых потребностей.</p>
-                <a href="#" class="button"><span>Оставить заявку</span></a>
+                <a href="#" class="button" data-micromodal-open="modal-1"><span>Оставить заявку</span></a>
               </div>
             </div>
 
@@ -136,7 +136,7 @@
                 </h3>
                 <p class="subtitle">Все автомобили мы подбираем индивидуально для каждого клиента или покупателя и с
                   трепетом относимся к реузльтату нашей работы.</p>
-                <a href="#" class="button"><span>Оставить заявку</span></a>
+                <a href="#" class="button" data-micromodal-open="modal-1"><span>Оставить заявку</span></a>
               </div>
             </div>
 
@@ -147,7 +147,7 @@
                 </h3>
                 <p class="subtitle">В нашем модельном ряду имеются модели сотен различных внедорожников, которые
                   удовлетворят даже самого требовательного клиента.</p>
-                <a href="#" class="button"><span>Оставить заявку</span></a>
+                <a href="#" class="button" data-micromodal-open="modal-1"><span>Оставить заявку</span></a>
               </div>
             </div>
 
@@ -213,35 +213,35 @@
 
           <div class="slider__navigation">
 
-              <button class="swiper-button swiper-button-prev" type="button">
-                <svg width="5" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#a)">
-                    <path
-                      d="m4.658.712.138.138a.234.234 0 0 1 0 .332L.978 5l3.818 3.818a.234.234 0 0 1 0 .332l-.138.138a.234.234 0 0 1-.332 0L.204 5.166a.234.234 0 0 1 0-.332L4.326.712a.234.234 0 0 1 .332 0Z"
-                      fill="#F57500" />
-                  </g>
-                  <defs>
-                    <clipPath id="a">
-                      <path fill="#fff" transform="matrix(-1 0 0 1 5 0)" d="M0 0h5v10H0z" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
+            <button class="swiper-button swiper-button-prev" type="button">
+              <svg width="5" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#a)">
+                  <path
+                    d="m4.658.712.138.138a.234.234 0 0 1 0 .332L.978 5l3.818 3.818a.234.234 0 0 1 0 .332l-.138.138a.234.234 0 0 1-.332 0L.204 5.166a.234.234 0 0 1 0-.332L4.326.712a.234.234 0 0 1 .332 0Z"
+                    fill="#F57500" />
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" transform="matrix(-1 0 0 1 5 0)" d="M0 0h5v10H0z" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
 
-              <button class="swiper-button swiper-button-next" type="button">
-                <svg width="5" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#a)">
-                    <path
-                      d="M.342.712.204.85a.234.234 0 0 0 0 .332L4.022 5 .204 8.818a.234.234 0 0 0 0 .332l.138.138c.092.091.24.091.332 0l4.122-4.122a.234.234 0 0 0 0-.332L.674.712a.234.234 0 0 0-.332 0Z"
-                      fill="#F57500" />
-                  </g>
-                  <defs>
-                    <clipPath id="a">
-                      <path fill="#fff" d="M0 0h5v10H0z" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
+            <button class="swiper-button swiper-button-next" type="button">
+              <svg width="5" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#a)">
+                  <path
+                    d="M.342.712.204.85a.234.234 0 0 0 0 .332L4.022 5 .204 8.818a.234.234 0 0 0 0 .332l.138.138c.092.091.24.091.332 0l4.122-4.122a.234.234 0 0 0 0-.332L.674.712a.234.234 0 0 0-.332 0Z"
+                    fill="#F57500" />
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M0 0h5v10H0z" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -263,10 +263,36 @@
     </section>
 
   </main>
+
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-title">Оставить заявку</h2>
+
+          <button class="modal__close" aria-label="Закрыть окно" data-micromodal-close type="button"></button>
+        </header>
+
+        <div id="modal-1-content">
+          <form action="#">
+            <input class="form-input modal__input" type="text" name="user-hame" placeholder="Ваше имя...">
+            <input class="form-input modal__input" type="tel" name="user-tel" placeholder="Ваш телефон...">
+            <textarea class="form-input modal__input" name="user-message" placeholder="Сообщение..."></textarea>
+          </form>
+        </div>
+
+        <footer class="modal__footer">
+          <button class="button" type="submit"><span>Отправить заявку</span></button>
+        </footer>
+
+      </div>
+    </div>
+  </div>
   <script src="./libs/swiper-bundle.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
-
+  <script src="https://unpkg.com/micromodal@0.4.10/dist/micromodal.min.js"></script>
   <script src="./js/scripts.js"></script>
 </body>
 

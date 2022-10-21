@@ -1,12 +1,12 @@
-
-const menuButton = document.querySelector('.nav-button');
-
-menuButton.addEventListener('click', function () {
-  document.body.classList.toggle('mob-menu-open');
-  menuButton.classList.toggle('open');
-});
-
 document.addEventListener('DOMContentLoaded', () => {
+
+  const menuButton = document.querySelector('.nav-button');
+
+  menuButton.addEventListener('click', function () {
+    document.body.classList.toggle('mob-menu-open');
+    menuButton.classList.toggle('open');
+  });
+
   const swiperIMG = new Swiper('.slider__images', {
     // параметры слайдера
     loop: false,
@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
       el: '.slider__counter-all',
       type: 'custom',
       renderCustom: function (swiper, curent, total) {
-        return `0${total}`
+        let totalResult = total >= 10 ? total : `0${total}`;
+        return totalResult;
       }
     },
   });
@@ -27,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 2400,
     parallax: true,
     grabCursor: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     mousewheel: {
       invert: false,
     },
@@ -80,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   swiperDETAILS.on('slideChange', function () {
     let slideIndex = swiperDETAILS.realIndex + 1;
+    let indResult = slideIndex >= 10 ? slideIndex : `0${slideIndex}`;
     gsap.to(curent, 0.2, {
       force3D: true,
       y: -20,
@@ -90,8 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
           force3D: true,
           y: 10,
         })
-        curent.innerHTML = `0${slideIndex}`
-        itemNumber.innerHTML = `0${slideIndex}`
+        curent.innerHTML = indResult
+        itemNumber.innerHTML = indResult
       }
 
     });
@@ -102,6 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: Power2.easeOut,
       delay: 0.6,
     });
+  });
+
+  MicroModal.init({
+    openTrigger: 'data-micromodal-open',
+    closeTrigger: 'data-micromodal-close',
+    disableFocus: true,
+    disableScroll: true,
+    awaitOpenAnimation: true,
+    awaitCloseAnimation: true,
+
   });
 
 
